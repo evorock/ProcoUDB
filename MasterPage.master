@@ -1,0 +1,77 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 24px;
+            color: #FFFFFF;
+        }
+        .style3
+        {
+            height: 24px;
+            color: #FFFFFF;
+            width: 150px;
+        }
+        .style4
+        {
+            height: 26px;
+            color: #FFFFFF;
+            }
+        .style8
+        {
+            height: 24px;
+            color: #FFFFFF;
+            width: 200px;
+        }
+        .style10
+        {
+            height: 2px;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    </div>
+    <center>
+    <table style="width:1000px;" bgcolor="Black">
+        <tr bgcolor="black">
+            <td colspan="2">
+                <asp:Image ID="Image1" runat="server" BackColor="Black" BorderColor="Black" 
+                    BorderStyle="None" ForeColor="Black" ImageAlign="Top" 
+                    ImageUrl="~/Imagenes/banner.png" />
+            </td>
+        </tr>
+        <tr >
+
+            <td class="style8" bgcolor="Black" style="width: 929px" width="929px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="style1" bgcolor="#CC0000" style="width: 1px">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style10" bgcolor="White" colspan="2">
+            </td>
+
+        </tr>
+        <tr>
+            <td class="style4" bgcolor="Black" width="200" colspan="2">
+                <center>Created by Evorock <span class="caption">©</span><br />
+                Derechos Reservados 2012<br />
+                Tel.: (503) 7786-5507</center></td>
+        </tr>
+    </table>
+    </center>
+    </form>
+    </body>
+</html>

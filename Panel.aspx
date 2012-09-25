@@ -23,7 +23,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p>
-        *Segun el Rango se mostrata la pantalla a cada usuario<br />
         <table style="width:100%;">
             <tr>
                 <td bgcolor="#BB1818" class="style12">
@@ -96,13 +95,15 @@
                                 Mantenimiento</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton8" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/edit_page.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/edit_page.png" 
+                                    PostBackUrl="~/Reportes.aspx" />
                                 <br />
                                 Reportes&nbsp;
                             </td>
                             <td class="style14">
                                 <asp:ImageButton ID="ImageButton9" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/phone_book_edit.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/phone_book_edit.png" 
+                                    PostBackUrl="~/Agenda.aspx" />
                                 Agenda&nbsp;
                                 <br />
                             </td>
@@ -124,12 +125,14 @@
                         <tr>
                             <td>
                                 <asp:ImageButton ID="ImageButton10" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/user_accept.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/user_accept.png" 
+                                    PostBackUrl="~/Ver_Perfil.aspx" />
                                 <br />
                                 Perfil</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton11" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/edit_profile.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/edit_profile.png" 
+                                    PostBackUrl="~/Editar_Perfil.aspx" />
                                 <br />
                                 Editar</td>
                             <td>

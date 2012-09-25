@@ -68,8 +68,7 @@
                     <tr>
                         <td class="style26">
                             <asp:ImageButton ID="ImageButton1" runat="server" 
-                                ImageUrl="~/Imagenes/icons/64x64/add_to_database.png" 
-                                PostBackUrl="View1" />
+                                ImageUrl="~/Imagenes/icons/64x64/add_to_database.png" />
                             <br />
                             Agregar</td>
                         <td class="style26">
@@ -193,7 +192,7 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                           <center> <table style="width: 431%;">
+                           <center> <table style="width: 832px;">
                                 <tr>
                                     <td bgcolor="#FFCC00" class="style32">
                                         Nombre</td>

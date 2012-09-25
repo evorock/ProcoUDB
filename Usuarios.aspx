@@ -68,7 +68,7 @@
                     <tr>
                         <td class="style26">
                             <asp:ImageButton ID="ImageButton1" runat="server" 
-                                ImageUrl="~/Imagenes/icons/64x64/add_user.png" PostBackUrl="View1" />
+                                ImageUrl="~/Imagenes/icons/64x64/add_user.png" />
                             <br />
                             Agregar</td>
                         <td class="style26">
@@ -180,10 +180,7 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                             ControlToValidate="TextBox8" ErrorMessage="*Digite una Contrasena" 
                                             ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                                        &nbsp;<asp:RangeValidator ID="RangeValidator1" runat="server" 
-                                            ErrorMessage="*6 Caracteres Min." ForeColor="#CC0000" MaximumValue="50" 
-                                            MinimumValue="6"></asp:RangeValidator>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr class="style17">
                                     <td class="style24">
@@ -210,8 +207,8 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                            &nbsp;<center><table style="width: 431%;">
-                                <tr>
+                            <center><table style="width: 832px;">
+                                <tr bgcolor="#0D0D0D">
                                     <td style="text-align: left">
                                         Nombre de Usuario:&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
@@ -220,7 +217,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="width: 431%;">
+                            <table style="width: 832px;">
                                 <tr>
                                     <td bgcolor="#FFCC00" class="style21">
                                         Nombre</td>
@@ -238,9 +235,9 @@
                                         &nbsp;</td>
                                     <td class="style23">
                                         &nbsp;</td>
-                                    <td>
+                                    <td><center>
                                         <asp:Button ID="Button7" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button8" runat="server" Text="Eliminar" />
+                                        &nbsp;<asp:Button ID="Button8" runat="server" Text="Eliminar" /></center>
                                     </td>
                                 </tr>
                             </table>
@@ -259,9 +256,9 @@
                     </tr>
                     <tr>
                         <td class="style12">
-                            &nbsp;</td>
+                            </td>
                         <td class="style11">
-                           <center> <table style="width: 431%;">
+                           <center> <table style="width: 832px;">
                                 <tr>
                                     <td bgcolor="#FFCC00" class="style21">
                                         Nombre</td>

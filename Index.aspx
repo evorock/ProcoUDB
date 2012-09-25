@@ -33,10 +33,9 @@
                         <tr>
                             <td class="style16">
                                 <br />
-                                <br />&nbsp;
-                                <asp:Image ID="Image2" runat="server" Height="131px" 
-                                ImageUrl="~/Imagenes/resources/Logo.png" Width="134px" />
-&nbsp;</td>
+                                <br />
+                                <center><asp:Image ID="Image2" runat="server" Height="131px" 
+                                ImageUrl="~/Imagenes/resources/Logo.png" Width="134px"/></center></td>
                         </tr>
                         <tr>
                             <td class="style12">
@@ -56,12 +55,11 @@
                         </tr>
                         <tr>
                             <td class="style16">
-                            &nbsp;&nbsp;Lost your Password?<br />
+                                <center>Lost your Password?</center>
                                 <br />
                             </td>
                         </tr>
                     </table>
-                    <br />
                 </center>
             </td>
         </tr>

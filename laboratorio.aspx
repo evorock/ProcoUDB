@@ -137,10 +137,10 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                            <center><table style="width: 431%;">
+                            <center><table style="width: 832px; color: #FFFFFF;">
                                 <tr>
                                     <td bgcolor="#FFCC00" class="style21">
-                                        Nombre de Laboratoio</td>
+                                        Nombre de Laboratorio</td>
                                     <td bgcolor="#FFCC00" class="style22">
                                         Departamento de Laboratorio</td>
                                     <td bgcolor="#FFCC00" class="style23">

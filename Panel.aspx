@@ -56,17 +56,20 @@
                                 Equipos</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton4" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/delete_home.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/delete_home.png" 
+                                    PostBackUrl="~/Mantenimiento_Aprobacion.aspx" />
                                 <br />
+                                Aprobacion
                                 Mantenimiento</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton5" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/link.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/link.png" PostBackUrl="~/M_Logico.aspx" />
                                 <br />
                                 Logico</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton6" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/link.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/link.png" 
+                                    PostBackUrl="~/M_Preventivo.aspx" />
                                 <br />
                                 Preventivo</td>
                         </tr>
@@ -87,7 +90,8 @@
                         <tr>
                             <td>
                                 <asp:ImageButton ID="ImageButton7" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/delete_home.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/delete_home.png" 
+                                    PostBackUrl="~/Mantenimiento.aspx" />
                                 <br />
                                 Mantenimiento</td>
                             <td>

@@ -65,6 +65,10 @@
                     <table style="width: 140px; margin-right: 0px;">
                         <tr>
                             <td class="style26">
+                            <a href="javascript:history.back()">
+                            <img alt="" src="Imagenes/icons/back_2.png" 
+                                style="height: 64px; width: 64px;" /></a><center>Back</center></td>
+                            <td class="style26">
                                 <asp:ImageButton ID="ImageButton1" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/add_to_database.png" />
                                 <br />Agregar</td>
@@ -119,7 +123,9 @@
                                         &nbsp;</td>
                                         <td class="style35">
                                             <asp:Button ID="Button3" runat="server" Text="Agregar" />
-                                            <asp:Button ID="Button4" runat="server" Text="Regresar" />
+                                            <a href="javascript:history.back()">
+                                            <input id="Regresar" type="button" value="Regresar" />
+                                            </a>
                                         </td>
                                     </tr>
                                 </table>

@@ -67,6 +67,10 @@
                <center> <table style="width: 140px; margin-right: 0px;">
                     <tr>
                         <td class="style26">
+                            <a href="javascript:history.back()">
+                            <img alt="" src="Imagenes/icons/back_2.png" 
+                                style="height: 64px; width: 64px;" /></a><center>Back</center></td>
+                        <td class="style26">
                             <asp:ImageButton ID="ImageButton1" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/add_to_database.png" />
                             <br />
@@ -135,25 +139,37 @@
                                     <td class="style29">
                                         Nombre de Departamento</td>
                                     <td class="style25">
-                                        <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList1" runat="server" 
+                                            DataSourceID="SqlDataSource1" DataTextField="nombre_departamento" 
+                                            DataValueField="nombre_departamento">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                            SelectCommand="SELECT [nombre_departamento] FROM [edificio]">
+                                        </asp:SqlDataSource>
                                     </td>
                                     <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                            ControlToValidate="TextBox14" ErrorMessage="*Requiere Nombre de Departamento" 
-                                            ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr class="style17">
                                     <td class="style29">
                                         Nombre de Laboritorio</td>
                                     <td class="style25">
-                                        <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList2" runat="server" 
+                                            DataSourceID="SqlDataSource2" DataTextField="nombre_laboratorio" 
+                                            DataValueField="nombre_laboratorio">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                            SelectCommand="SELECT [nombre_laboratorio] FROM [laboratorios] WHERE ([nombre_departamento] = @nombre_departamento)">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="DropDownList1" Name="nombre_departamento" 
+                                                    PropertyName="SelectedValue" Type="String" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
                                     </td>
                                     <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                            ControlToValidate="TextBox15" ErrorMessage="*Requiere Nombre de Laboratorio" 
-                                            ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr class="style17">
                                     <td class="style29">
@@ -172,7 +188,9 @@
                                         &nbsp;</td>
                                     <td class="style25">
                                         <asp:Button ID="Button3" runat="server" Text="Agregar" />
-                                        <asp:Button ID="Button4" runat="server" Text="Regresar" />
+                                        <a href="javascript:history.back()">
+                                        <input id="Regresar" type="button" value="Regresar" />
+                                        </a>
                                     </td>
                                 </tr>
                             </table>

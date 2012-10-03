@@ -50,7 +50,8 @@
                                 Laboratorios</td>
                             <td>
                                 <asp:ImageButton ID="ImageButton3" runat="server" 
-                                    ImageUrl="~/Imagenes/icons/64x64/accept_database.png" />
+                                    ImageUrl="~/Imagenes/icons/64x64/accept_database.png" 
+                                    DescriptionUrl="~/Equipos.aspx" PostBackUrl="~/Equipos.aspx" Width="64px" />
                                 <br />
                                 Equipos</td>
                             <td>

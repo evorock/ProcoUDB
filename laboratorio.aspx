@@ -62,6 +62,10 @@
                 <center><table style="width: 140px; margin-right: 0px;">
                     <tr>
                         <td>
+                            <a href="javascript:history.back()">
+                            <img alt="" src="Imagenes/icons/back_2.png" 
+                                style="height: 64px; width: 64px;" /></a><center>Back</center></td>
+                        <td>
                             <asp:ImageButton ID="ImageButton1" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/add_home.png" />
                             <br />Agregar</td>
@@ -90,7 +94,7 @@
                             <center><table align="center" style="width: 300%;">
                                 <tr>
                                     <td class="style18">
-                                        Nombre de Laboratorio</td>
+                                        Departamento de Laboratorio</td>
                                     <td class="style25">
                                         <asp:TextBox ID="TextBox5" runat="server" style="text-align: left"></asp:TextBox>
                                     </td>
@@ -102,22 +106,21 @@
                                 </tr>
                                 <tr>
                                     <td class="style18">
-                                        Departamento de Laboratorio</td>
+                                        Nombre de Laboratorio</td>
                                     <td class="style25">
                                         <asp:TextBox ID="TextBox12" runat="server" style="text-align: left"></asp:TextBox>
                                     </td>
                                     <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                            ControlToValidate="TextBox12" ErrorMessage="*Requiere Nombre Completo" 
-                                            ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr class="style17">
                                     <td class="style24">
                                         &nbsp;</td>
                                     <td class="style25">
                                         <asp:Button ID="Button3" runat="server" Text="Agregar" />
-                                        <asp:Button ID="Button4" runat="server" Text="Regresar" />
+                                        <a href="javascript:history.back()">
+                                        <input id="Regresar" type="button" value="Regresar" />
+                                        </a>
                                     </td>
                                 </tr>
                             </table>

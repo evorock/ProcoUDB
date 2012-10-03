@@ -67,20 +67,25 @@
                <center> <table style="width: 210px; margin-right: 0px;">
                     <tr>
                         <td class="style26">
+                            <a href="javascript:history.back()">
+                            <img alt="" src="Imagenes/icons/back_2.png" 
+                                style="height: 64px; width: 64px;" /></a><br />
+                            <center>Back</center></td>
+                        <td class="style26">
                             <asp:ImageButton ID="ImageButton1" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/add_user.png" />
                             <br />
-                            Agregar</td>
+                            <center>Agregar</center></td>
                         <td class="style26">
                             <asp:ImageButton ID="ImageButton2" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/search_user.png" />
                             <br />
-                            Buscar</td>
+                            <center>Buscar</center></td>
                         <td>
                             <asp:ImageButton ID="ImageButton3" runat="server" 
                                 ImageUrl="~/Imagenes/icons/64x64/phone_book_edit.png" />
                             <br />
-                            Listado</td>
+                           <center> Listado</center></td>
                     </tr>
                 </table></center>
             </td>
@@ -139,6 +144,10 @@
                                         Cargo</td>
                                     <td class="style25">
                                         <asp:DropDownList ID="DropDownList2" runat="server" style="text-align: left">
+                                            <asp:ListItem Value="empleado">Personal</asp:ListItem>
+                                            <asp:ListItem Value="jefe">Jefe</asp:ListItem>
+                                            <asp:ListItem Value="supervisor">Supervisor</asp:ListItem>
+                                            <asp:ListItem Value="administrador">Administrador</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
                                     <td>
@@ -148,11 +157,18 @@
                                     <td class="style24">
                                         Departamento a Administrar</td>
                                     <td class="style25">
-                                        <asp:TextBox ID="TextBox6" runat="server" style="text-align: left"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList3" runat="server" 
+                                            DataSourceID="SqlDataSource1" DataTextField="nombre_departamento" 
+                                            DataValueField="nombre_departamento">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                            SelectCommand="SELECT [nombre_departamento] FROM [edificio]">
+                                        </asp:SqlDataSource>
                                     </td>
                                     <td>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                            ControlToValidate="TextBox6" ErrorMessage="*Nombre del Departamento" 
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                            ControlToValidate="DropDownList3" ErrorMessage="*Requiere un Dept." 
                                             ForeColor="#CC0000"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
@@ -187,7 +203,8 @@
                                         &nbsp;</td>
                                     <td class="style25">
                                         <asp:Button ID="Button3" runat="server" Text="Agregar" />
-                                        <asp:Button ID="Button4" runat="server" Text="Regresar" />
+                                        <a href="javascript:history.back()">
+                                        <input id="Regresar" type="button" value="Regresar" /></a>
                                     </td>
                                 </tr>
                             </table>

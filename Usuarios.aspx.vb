@@ -14,14 +14,8 @@ Partial Class _Default
     End Sub
 
     Protected Sub Button3_Click(sender As Object, e As System.EventArgs) Handles Button3.Click
-        Dim texto1 As String = "SELECT * FROM usuarios WHERE nombre = '" & TextBox5.Text & "' "
-        Dim texto2 As String = "SELECT * FROM usuarios where usuario = '" & TextBox7.Text & "' "
-
-        If texto1.ToString <> TextBox5.Text Then
-            MsgBox("Usuario Registrado")
-            Response.Redirect("Usuarios.aspx")
-
-        ElseIf texto2.ToString <> TextBox7.Text Then
+        Dim txtuser As String = "SELECT * FROM usuarios where usuario = '" & TextBox7.Text & "' "
+        If txtuser.ToString = TextBox7.Text Then
             MsgBox("Usuario Registrado")
             Response.Redirect("Usuarios.aspx")
 

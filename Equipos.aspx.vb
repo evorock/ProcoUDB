@@ -12,7 +12,7 @@ Partial Class _Default
 
     Protected Sub Button3_Click(sender As Object, e As System.EventArgs) Handles Button3.Click
         Dim texto As String = "SELECT * FROM equipos WHERE nombre_equipo = '" & TextBox5.Text & "' "
-        If TextBox5.Text <> texto.ToString Then
+        If TextBox5.Text = texto.ToString Then
             MsgBox("Equipo Registrado")
             Response.Redirect("Equipos.aspx")
         Else

@@ -19,7 +19,7 @@ nombre_departamento varchar(100) primary key
 
 create table usuarios(
 id_usuario int identity (1,1) unique,
-nombre varchar(100) primary key,
+nombre varchar(100),
 direccion varchar(200),
 telefono char(9),
 cargo varchar(50) check(cargo in ('jefe','empleado','supervisor','administrador')),
@@ -47,7 +47,7 @@ fabricante varchar(100),
 nombre_departamento varchar(100),
 nombre_laboratorio varchar(100),
 espefificacion_tecnica varchar(100),
-observaciones varchar(300),
+observaciones varchar(800),
 estado varchar(50) check (estado in('bueno', 'malo', 'reparacion')),
 constraint nombre_departamento_3 foreign key (nombre_departamento) references edificio on delete cascade,
 constraint nombre_laboratorio_1 foreign key (nombre_laboratorio) references laboratorios
@@ -56,15 +56,15 @@ constraint nombre_laboratorio_1 foreign key (nombre_laboratorio) references labo
 create table mantenimiento_logico
 (
 id_logico int identity (1,1) unique,
-nombre_logico varchar(100) primary key,
-descripcion_0 varchar(100)
+nombre_logico varchar(200) primary key,
+descripcion_0 varchar(800)
 );
 
 create table mantenimiento_preventivo
 (
 id_preventivo int identity (1,1) unique,
-nombre_preventivo varchar(100) primary key,
-descripcion_0 varchar(100)
+nombre_preventivo varchar(200) primary key,
+descripcion_0 varchar(800)
 );
 
 create table mantenimiento
@@ -74,15 +74,15 @@ nombre_departamento varchar(100),
 nombre_laboratorio varchar(100),
 nombre varchar(100),
 nombre_equipo varchar(100),
-nombre_logico varchar(100),
-nombre_preventivo varchar(100),
+nombre_logico varchar(200),
+nombre_preventivo varchar(200),
 tipo varchar(50) check ( tipo in('preventivo','logico')),
 fecha date,
+hora varchar(100),
 estado varchar(50) check (estado in ('abierto','completado','pendiente','Denegado')),
 aprobacion varchar(50) check (aprobacion in('pendiente','denegado','aprobado')),
 constraint nombre_departamento_4 foreign key (nombre_departamento) references edificio on delete cascade,
 constraint nombre_laboratorio_2 foreign key (nombre_laboratorio) references laboratorios,
-constraint nombre_2 foreign key (nombre) references usuarios,
 constraint nombre_equipo_1 foreign key (nombre_equipo) references equipos,
 constraint nombre_logico_1 foreign key (nombre_logico) references mantenimiento_logico,
 constraint nombre_preventivo_1 foreign key (nombre_preventivo) references mantenimiento_preventivo

@@ -140,30 +140,95 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                            <center><table style="width: 832px; color: #FFFFFF;">
-                                <tr>
-                                    <td bgcolor="#FFCC00" class="style21">
-                                        Nombre de Laboratorio</td>
-                                    <td bgcolor="#FFCC00" class="style22">
-                                        Departamento de Laboratorio</td>
-                                    <td bgcolor="#FFCC00" class="style23">
-                                        Encargado</td>
-                                    <td bgcolor="#FFCC00">
-                                        Accion</td>
-                                </tr>
-                                <tr>
-                                    <td class="style21">
-                                        &nbsp;</td>
-                                    <td class="style22">
-                                        &nbsp;</td>
-                                    <td class="style23">
-                                        &nbsp;</td>
-                                    <td>
-                                        <asp:Button ID="Button9" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button10" runat="server" Text="Eliminar" />
-                                    </td>
-                                </tr>
-                            </table>
+                            <asp:ListView ID="ListView1" runat="server" DataKeyNames="nombre_laboratorio" 
+                                DataSourceID="SqlDataSource1">
+                                <AlternatingItemTemplate>
+                                    <span style="background-color: #FFFFFF;color: #284775;">nombre_laboratorio:
+                                    <asp:Label ID="nombre_laboratorioLabel" runat="server" 
+                                        Text='<%# Eval("nombre_laboratorio") %>' />
+                                    <br />
+                                    nombre_departamento:
+                                    <asp:Label ID="nombre_departamentoLabel" runat="server" 
+                                        Text='<%# Eval("nombre_departamento") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </AlternatingItemTemplate>
+                                <EditItemTemplate>
+                                    <span style="background-color: #999999;">nombre_laboratorio:
+                                    <asp:Label ID="nombre_laboratorioLabel1" runat="server" 
+                                        Text='<%# Eval("nombre_laboratorio") %>' />
+                                    <br />
+                                    nombre_departamento:
+                                    <asp:TextBox ID="nombre_departamentoTextBox" runat="server" 
+                                        Text='<%# Bind("nombre_departamento") %>' />
+                                    <br />
+                                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" 
+                                        Text="Update" />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
+                                        Text="Cancel" />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </EditItemTemplate>
+                                <EmptyDataTemplate>
+                                    <span>No data was returned.</span>
+                                </EmptyDataTemplate>
+                                <InsertItemTemplate>
+                                    <span style="">nombre_laboratorio:
+                                    <asp:TextBox ID="nombre_laboratorioTextBox" runat="server" 
+                                        Text='<%# Bind("nombre_laboratorio") %>' />
+                                    <br />
+                                    nombre_departamento:
+                                    <asp:TextBox ID="nombre_departamentoTextBox" runat="server" 
+                                        Text='<%# Bind("nombre_departamento") %>' />
+                                    <br />
+                                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" 
+                                        Text="Insert" />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
+                                        Text="Clear" />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </InsertItemTemplate>
+                                <ItemTemplate>
+                                    <span style="background-color: #E0FFFF;color: #333333;">nombre_laboratorio:
+                                    <asp:Label ID="nombre_laboratorioLabel" runat="server" 
+                                        Text='<%# Eval("nombre_laboratorio") %>' />
+                                    <br />
+                                    nombre_departamento:
+                                    <asp:Label ID="nombre_departamentoLabel" runat="server" 
+                                        Text='<%# Eval("nombre_departamento") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <div ID="itemPlaceholderContainer" runat="server" 
+                                        style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                        <span runat="server" id="itemPlaceholder" />
+                                    </div>
+                                    <div style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;">
+                                    </div>
+                                </LayoutTemplate>
+                                <SelectedItemTemplate>
+                                    <span style="background-color: #E2DED6;font-weight: bold;color: #333333;">
+                                    nombre_laboratorio:
+                                    <asp:Label ID="nombre_laboratorioLabel" runat="server" 
+                                        Text='<%# Eval("nombre_laboratorio") %>' />
+                                    <br />
+                                    nombre_departamento:
+                                    <asp:Label ID="nombre_departamentoLabel" runat="server" 
+                                        Text='<%# Eval("nombre_departamento") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </SelectedItemTemplate>
+                            </asp:ListView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                SelectCommand="SELECT [nombre_laboratorio], [nombre_departamento] FROM [laboratorios]">
+                            </asp:SqlDataSource>
                             </td>
                     </tr>
                 </table>

@@ -38,14 +38,6 @@
         {
             width: 165px;
         }
-        .style32
-        {
-            width: 175px;
-        }
-        .style33
-        {
-            width: 130px;
-        }
         .style34
         {
             width: 200px;
@@ -210,34 +202,43 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                           <center> <table style="width: 832px;">
-                                <tr>
-                                    <td bgcolor="#FFCC00" class="style32">
-                                        Nombre</td>
-                                    <td bgcolor="#FFCC00" class="style25">
-                                        Departamento</td>
-                                    <td bgcolor="#FFCC00" class="style25">
-                                        Laboratorio</td>
-                                    <td bgcolor="#FFCC00" class="style33">
-                                        Estado</td>
-                                    <td bgcolor="#FFCC00" class="style34">
-                                        Accion</td>
-                                </tr>
-                                <tr>
-                                    <td class="style32">
-                                        &nbsp;</td>
-                                    <td class="style25">
-                                        &nbsp;</td>
-                                    <td class="style25">
-                                        &nbsp;</td>
-                                    <td class="style33">
-                                    </td>
-                                    <td class="style34">
-                                        <asp:Button ID="Button9" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button10" runat="server" Text="Eliminar" />
-                                    </td>
-                                </tr>
-                            </table></center>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                                CellPadding="4" DataKeyNames="nombre_equipo" DataSourceID="SqlDataSource3" 
+                                ForeColor="#333333" GridLines="None">
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:BoundField DataField="nombre_equipo" HeaderText="nombre_equipo" 
+                                        ReadOnly="True" SortExpression="nombre_equipo" />
+                                    <asp:BoundField DataField="fabricante" HeaderText="fabricante" 
+                                        SortExpression="fabricante" />
+                                    <asp:BoundField DataField="tipo_equipo" HeaderText="tipo_equipo" 
+                                        SortExpression="tipo_equipo" />
+                                    <asp:BoundField DataField="nombre_departamento" 
+                                        HeaderText="nombre_departamento" SortExpression="nombre_departamento" />
+                                    <asp:BoundField DataField="nombre_laboratorio" HeaderText="nombre_laboratorio" 
+                                        SortExpression="nombre_laboratorio" />
+                                    <asp:BoundField DataField="espefificacion_tecnica" 
+                                        HeaderText="espefificacion_tecnica" SortExpression="espefificacion_tecnica" />
+                                    <asp:BoundField DataField="observaciones" HeaderText="observaciones" 
+                                        SortExpression="observaciones" />
+                                    <asp:BoundField DataField="estado" HeaderText="estado" 
+                                        SortExpression="estado" />
+                                </Columns>
+                                <EditRowStyle BackColor="#2461BF" />
+                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#EFF3FB" />
+                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                SelectCommand="SELECT [nombre_equipo], [fabricante], [tipo_equipo], [nombre_departamento], [nombre_laboratorio], [espefificacion_tecnica], [observaciones], [estado] FROM [equipos]">
+                            </asp:SqlDataSource>
                         </td>
                     </tr>
                 </table>

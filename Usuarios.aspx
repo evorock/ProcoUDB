@@ -26,18 +26,6 @@
         {
             color: #FFFFFF;
         }
-        .style21
-        {
-            width: 251px;
-        }
-        .style22
-        {
-            width: 151px;
-        }
-        .style23
-        {
-            width: 250px;
-        }
         .style24
         {
             width: 121px;
@@ -224,81 +212,68 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                            <center><table style="width: 832px;">
-                                <tr bgcolor="#0D0D0D">
-                                    <td style="text-align: left">
-                                        Nombre de Usuario:&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="Button6" runat="server" Text="Buscar" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <table style="width: 832px;">
-                                <tr>
-                                    <td bgcolor="#FFCC00" class="style21">
-                                        Nombre</td>
-                                    <td bgcolor="#FFCC00" class="style22">
-                                        Cargo</td>
-                                    <td bgcolor="#FFCC00" class="style23">
-                                        Dept. Administra</td>
-                                    <td bgcolor="#FFCC00">
-                                        Accion</td>
-                                </tr>
-                                <tr>
-                                    <td class="style21">
-                                        &nbsp;</td>
-                                    <td class="style22">
-                                        &nbsp;</td>
-                                    <td class="style23">
-                                        &nbsp;</td>
-                                    <td><center>
-                                        <asp:Button ID="Button7" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button8" runat="server" Text="Eliminar" /></center>
-                                    </td>
-                                </tr>
-                            </table>
+                            <center>
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                                    CellPadding="4" DataKeyNames="id_usuario" DataSourceID="ObjectDataSource1" 
+                                    ForeColor="#333333" GridLines="None">
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="nombre" HeaderText="nombre" 
+                                            SortExpression="nombre" />
+                                        <asp:BoundField DataField="direccion" HeaderText="direccion" 
+                                            SortExpression="direccion" />
+                                        <asp:BoundField DataField="telefono" HeaderText="telefono" 
+                                            SortExpression="telefono" />
+                                        <asp:BoundField DataField="cargo" HeaderText="cargo" SortExpression="cargo" />
+                                        <asp:BoundField DataField="nombre_departamento" 
+                                            HeaderText="nombre_departamento" SortExpression="nombre_departamento" />
+                                        <asp:BoundField DataField="usuario" HeaderText="usuario" 
+                                            SortExpression="usuario" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#2461BF" />
+                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#EFF3FB" />
+                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                </asp:GridView>
+                                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                                    InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+                                    SelectMethod="GetData" TypeName="controlTableAdapters.usuariosTableAdapter">
+                                    <InsertParameters>
+                                        <asp:Parameter Name="nombre" Type="String" />
+                                        <asp:Parameter Name="direccion" Type="String" />
+                                        <asp:Parameter Name="telefono" Type="String" />
+                                        <asp:Parameter Name="cargo" Type="String" />
+                                        <asp:Parameter Name="nombre_departamento" Type="String" />
+                                        <asp:Parameter Name="usuario" Type="String" />
+                                        <asp:Parameter Name="pass" Type="String" />
+                                        <asp:Parameter Name="foto" Type="String" />
+                                    </InsertParameters>
+                                </asp:ObjectDataSource>
                             <br />
                         </td>
                     </tr>
                 </table></center>
             </asp:View>
             <asp:View ID="View3" runat="server">
-                <table style="width:100%;">
+                <center><table style="width: 143px; margin-right: 0px;">
                     <tr>
-                        <td bgcolor="#BB1818" class="style12">
-                            &nbsp;</td>
-                        <td bgcolor="White" class="style13">
-                            Lista de Usuarios</td>
-                    </tr>
-                    <tr>
-                        <td class="style12">
-                            </td>
-                        <td class="style11">
-                           <center> <table style="width: 832px;">
-                                <tr>
-                                    <td bgcolor="#FFCC00" class="style21">
-                                        Nombre</td>
-                                    <td bgcolor="#FFCC00" class="style22">
-                                        Cargo</td>
-                                    <td bgcolor="#FFCC00" class="style23">
-                                        Dept. Administra</td>
-                                    <td bgcolor="#FFCC00">
-                                        Accion</td>
-                                </tr>
-                                <tr>
-                                    <td class="style21">
-                                        &nbsp;</td>
-                                    <td class="style22">
-                                        &nbsp;</td>
-                                    <td class="style23">
-                                        &nbsp;</td>
-                                    <td>
-                                        <asp:Button ID="Button9" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button10" runat="server" Text="Eliminar" />
-                                    </td>
-                                </tr>
-                            </table></center>
+                        <td class="style26">
+                            <asp:ImageButton ID="ImageButton9" runat="server" 
+                                ImageUrl="~/Imagenes/icons/64x64/delete_user.png" PostBackUrl="~/user.aspx" />
+                            <br />
+                            <span class="style17">Eliminar</span></td>
+                        <td class="style26">
+                            <asp:ImageButton ID="ImageButton10" runat="server" 
+                                ImageUrl="~/Imagenes/icons/64x64/edit_profile.png" 
+                                PostBackUrl="~/Editar_Perfil.aspx" />
+                            <center class="style17">
+                                Editar</center></center>
                         </td>
                     </tr>
                 </table>

@@ -149,28 +149,31 @@
                         <td class="style12">
                             &nbsp;</td>
                         <td class="style11">
-                            <center>
-                                <table style="width: 832px;">
-                                    <tr>
-                                        <td bgcolor="#FFCC00" class="style32">
-                                        Nombre</td>
-                                        <td bgcolor="#FFCC00" class="style25">
-                                            DescripcionLaboratorio</td>
-                                        <td bgcolor="#FFCC00" class="style34">
-                                        Accion</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style32">
-                                        &nbsp;</td>
-                                        <td class="style25">
-                                        &nbsp;</td>
-                                        <td class="style34">
-                                            <asp:Button ID="Button9" runat="server" Text="Editar" />
-                                        &nbsp;<asp:Button ID="Button10" runat="server" Text="Eliminar" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </center>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                                CellPadding="4" DataKeyNames="nombre_logico" DataSourceID="SqlDataSource1" 
+                                ForeColor="#333333" GridLines="None">
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:BoundField DataField="nombre_logico" HeaderText="nombre_logico" 
+                                        ReadOnly="True" SortExpression="nombre_logico" />
+                                    <asp:BoundField DataField="descripcion_0" HeaderText="descripcion_0" 
+                                        SortExpression="descripcion_0" />
+                                </Columns>
+                                <EditRowStyle BackColor="#2461BF" />
+                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#EFF3FB" />
+                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:proyectoConnectionString %>" 
+                                SelectCommand="SELECT [nombre_logico], [descripcion_0] FROM [mantenimiento_logico]">
+                            </asp:SqlDataSource>
                         </td>
                     </tr>
                 </table>
